@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --main-color-one: #009688;
+  --main-color-two: #9c27b0;
+  --main-color-three: #333;
+}
+body {
+  margin: 0;
+  font-family: "Open Sans", serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  text-align: center;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--main-color-two);
+  text-transform: capitalize;
+}
+.guess-game {
+  background-color: #eee;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex: 1;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+  .game {
+    .tries {
+      .try {
+        display: flex;
+        align-items: center;
+        &.disabled {
+          opacity: 0.5;
+          pointer-events: none;
+        }
+        span {
+          font-size: 20px;
+          text-transform: capitalize;
+          color: var(--main-color-one);
+        }
+        input {
+          border: none;
+          outline: none;
+          padding: 0;
+          width: 100%;
+          max-width: 40px;
+          height: 40px;
+          margin-left: 10px;
+          margin-top: 10px;
+          font-size: 20px;
+          text-align: center;
+          border-radius: 5px;
+          border-bottom: 3px solid var(--main-color-one);
+          color: var(--main-color-one);
+          &:disabled {
+            background-color: white;
+          }
+          &.complet {
+            background-color: var(--main-color-one);
+            color: white;
+            border-color: transparent;
+          }
+          &.half {
+            background-color: var(--main-color-two);
+            color: white;
+            border-color: transparent;
+          }
+          &.worng {
+            background-color: var(--main-color-three);
+            color: white;
+            border-color: transparent;
+          }
+        }
+      }
+    }
+    .btns {
+      display: flex;
+      margin-top: 20px;
+      margin-left: 50px;
+      button {
+        padding: 10px;
+        color: white;
+        text-transform: capitalize;
+        font-size: 15px;
+        font-weight: bold;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        &.btn-one {
+          background-color: var(--main-color-one);
+        }
+        &.btn-two {
+          background-color: var(--main-color-two);
+          margin-right: 10px;
+          margin-left: 10px;
+        }
+        &.btn-three {
+          background-color: var(--main-color-three);
+        }
+      }
+    }
+    .msg {
+      p {
+        background-color: white;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        text-transform: capitalize;
+        margin-top: 10px;
+        margin-left: 50px;
+        border-radius: 5px;
+      }
+    }
+  }
+  .rules {
+    h3 {
+      text-align: center;
+      color: var(--main-color-one);
+      caret-color: var(--main-color-one);
+    }
+    .rule {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      span {
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+      .span-one {
+        background-color: var(--main-color-one);
+      }
+      .span-two {
+        background-color: var(--main-color-two);
+      }
+      .span-three {
+        background-color: var(--main-color-three);
+      }
+      p {
+        margin: 0;
+        font-size: 15px;
+        color: #00000082;
+      }
+    }
+  }
+}
+footer {
+  background-color: var(--main-color-three);
+  color: #afafaf;
+  font-size: 15px;
+  padding: 10px;
+  text-align: center;
+  letter-spacing: 1px;
+  span {
+    color: var(--main-color-two);
+    font-size: 20px;
+  }
+}
